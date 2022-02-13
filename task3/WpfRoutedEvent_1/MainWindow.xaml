@@ -1,0 +1,16 @@
+﻿<Window TextBoxBase.TextChanged="Window_TextChanged" x:Class="WpfRoutedEvent_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfRoutedEvent_1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300.535" Width="570.178">
+    <Grid TextBoxBase.TextChanged="Grid_TextChanged">
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="127,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <RadioButton x:Name="radioButton1" Content="Обработка события в Textbox" HorizontalAlignment="Left" Margin="297,92,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioButton2" Content="Обработка события в Grid" HorizontalAlignment="Left" Margin="297,134,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioButton3" Content="Обработка события в Window" HorizontalAlignment="Left" Margin="297,174,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

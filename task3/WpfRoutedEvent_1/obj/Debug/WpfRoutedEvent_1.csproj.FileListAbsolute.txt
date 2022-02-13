@@ -1,0 +1,14 @@
+D:\учеба\СТП\WPF_tasks\task3\WpfRoutedEvent_1\bin\Debug\WpfRoutedEvent_1.exe.config
+D:\учеба\СТП\WPF_tasks\task3\WpfRoutedEvent_1\bin\Debug\WpfRoutedEvent_1.exe
+D:\учеба\СТП\WPF_tasks\task3\WpfRoutedEvent_1\bin\Debug\WpfRoutedEvent_1.pdb
+D:\учеба\СТП\WPF_tasks\task3\WpfRoutedEvent_1\obj\Debug\MainWindow.g.cs
+D:\учеба\СТП\WPF_tasks\task3\WpfRoutedEvent_1\obj\Debug\App.g.cs
+D:\учеба\СТП\WPF_tasks\task3\WpfRoutedEvent_1\obj\Debug\WpfRoutedEvent_1_MarkupCompile.cache
+D:\учеба\СТП\WPF_tasks\task3\WpfRoutedEvent_1\obj\Debug\WpfRoutedEvent_1_MarkupCompile.lref
+D:\учеба\СТП\WPF_tasks\task3\WpfRoutedEvent_1\obj\Debug\MainWindow.baml
+D:\учеба\СТП\WPF_tasks\task3\WpfRoutedEvent_1\obj\Debug\WpfRoutedEvent_1.g.resources
+D:\учеба\СТП\WPF_tasks\task3\WpfRoutedEvent_1\obj\Debug\WpfRoutedEvent_1.Properties.Resources.resources
+D:\учеба\СТП\WPF_tasks\task3\WpfRoutedEvent_1\obj\Debug\WpfRoutedEvent_1.csproj.GenerateResource.cache
+D:\учеба\СТП\WPF_tasks\task3\WpfRoutedEvent_1\obj\Debug\WpfRoutedEvent_1.csproj.CoreCompileInputs.cache
+D:\учеба\СТП\WPF_tasks\task3\WpfRoutedEvent_1\obj\Debug\WpfRoutedEvent_1.exe
+D:\учеба\СТП\WPF_tasks\task3\WpfRoutedEvent_1\obj\Debug\WpfRoutedEvent_1.pdb
