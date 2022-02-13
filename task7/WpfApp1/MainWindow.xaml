@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="262.623" Width="503.443"
+        Background="{StaticResource gradientStyle}">
+    <Grid>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="168,119,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBlock HorizontalAlignment="Left" Margin="330,119,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="312,174,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Template="{DynamicResource customButtonTemplate}" Content="Button" HorizontalAlignment="Left" Margin="95,174,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
