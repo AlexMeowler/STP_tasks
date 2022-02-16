@@ -12,3 +12,17 @@ D:\учеба\СТП\WPF_tasks\lab2\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateRes
 D:\учеба\СТП\WPF_tasks\lab2\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
 D:\учеба\СТП\WPF_tasks\lab2\WpfApp1\obj\Debug\WpfApp1.exe
 D:\учеба\СТП\WPF_tasks\lab2\WpfApp1\obj\Debug\WpfApp1.pdb
+D:\учеба\СТП\STP_tasks\WPF\lab2\WpfApp1\bin\Debug\WpfApp1.exe.config
+D:\учеба\СТП\STP_tasks\WPF\lab2\WpfApp1\bin\Debug\WpfApp1.exe
+D:\учеба\СТП\STP_tasks\WPF\lab2\WpfApp1\bin\Debug\WpfApp1.pdb
+D:\учеба\СТП\STP_tasks\WPF\lab2\WpfApp1\obj\Debug\View\MainWindow.g.cs
+D:\учеба\СТП\STP_tasks\WPF\lab2\WpfApp1\obj\Debug\App.g.cs
+D:\учеба\СТП\STP_tasks\WPF\lab2\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+D:\учеба\СТП\STP_tasks\WPF\lab2\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+D:\учеба\СТП\STP_tasks\WPF\lab2\WpfApp1\obj\Debug\View\MainWindow.baml
+D:\учеба\СТП\STP_tasks\WPF\lab2\WpfApp1\obj\Debug\WpfApp1.g.resources
+D:\учеба\СТП\STP_tasks\WPF\lab2\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+D:\учеба\СТП\STP_tasks\WPF\lab2\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.cache
+D:\учеба\СТП\STP_tasks\WPF\lab2\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
+D:\учеба\СТП\STP_tasks\WPF\lab2\WpfApp1\obj\Debug\WpfApp1.exe
+D:\учеба\СТП\STP_tasks\WPF\lab2\WpfApp1\obj\Debug\WpfApp1.pdb
