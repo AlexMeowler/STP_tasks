@@ -1,0 +1,11 @@
+﻿@model WebApplication1.Models.Person
+
+@{
+    ViewBag.Title = "Привет";
+}
+<div>
+    <h1>Здравствуйте, @Model.ToString()!</h1>
+    <p>
+        @Html.ActionLink("На главную", "Index")
+    </p>
+</div>

@@ -1,0 +1,22 @@
+﻿@model WebApplication1.Models.Person
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Hello</title>
+</head>
+<body>
+    <div>
+        <h1>Здравствуйте, @Model.ToString()!</h1>
+        <p>
+            @Html.ActionLink("На главную", "Index")
+        </p>
+    </div>
+</body>
+</html>
