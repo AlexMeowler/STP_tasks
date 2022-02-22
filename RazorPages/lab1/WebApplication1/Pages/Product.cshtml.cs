@@ -28,7 +28,7 @@ namespace WebApplication1.Pages
         public void OnPostDiscount(string name, decimal? price, double discount)
         {
             decimal? result = price * (decimal?)discount/100;
-            MessageRezult = $"Для товара {name} с ценой {price} скидка получится {result}";
+            MessageRezult = $"Для товара {name} с ценой {price} скидка получится { result}";
             Product.Price = price;
             Product.Name = name;
         }

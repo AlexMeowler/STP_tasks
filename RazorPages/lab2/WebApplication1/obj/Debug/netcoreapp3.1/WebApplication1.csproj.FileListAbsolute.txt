@@ -154,3 +154,4 @@ D:\учеба\СТП\STP_tasks\RazorPages\lab2\WebApplication1\bin\Debug\netcore
 D:\учеба\СТП\STP_tasks\RazorPages\lab2\WebApplication1\bin\Debug\netcoreapp3.1\Castle.Windsor.dll
 D:\учеба\СТП\STP_tasks\RazorPages\lab2\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 D:\учеба\СТП\STP_tasks\RazorPages\lab2\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+D:\учеба\СТП\STP_tasks\RazorPages\lab2\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csproj.AssemblyReference.cache
