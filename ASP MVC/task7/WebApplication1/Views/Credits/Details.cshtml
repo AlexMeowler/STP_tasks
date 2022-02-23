@@ -1,0 +1,51 @@
+﻿@model WebApplication1.Models.Credit
+
+@{
+    ViewBag.Title = "Детали";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Информация по кредиту</h2>
+
+<div>
+    <h4>Credit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Head)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Head)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Period)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Period)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Procent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Procent)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.CreditId }) |
+    @Html.ActionLink("Назад", "Index")
+</p>

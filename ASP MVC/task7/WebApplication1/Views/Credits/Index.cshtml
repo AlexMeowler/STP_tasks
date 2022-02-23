@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebApplication1.Models.Credit>
+
+@{
+    ViewBag.Title = "Кредиты";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Список кредитов</h2>
+
+<p>
+    @Html.ActionLink("Создать новый", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Head)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Period)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Procent)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Head)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Period)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Procent)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.CreditId }) |
+            @Html.ActionLink("Детали", "Details", new { id=item.CreditId }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.CreditId })
+        </td>
+    </tr>
+}
+
+</table>

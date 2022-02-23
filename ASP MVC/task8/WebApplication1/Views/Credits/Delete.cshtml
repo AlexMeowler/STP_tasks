@@ -1,0 +1,57 @@
+﻿@model WebApplication1.Models.Credit
+
+@{
+    ViewBag.Title = "Удадить кредит";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Удалить</h2>
+
+<h3>Вы уверены насчет удаления?</h3>
+<div>
+    <h4>Credit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Head)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Head)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Period)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Period)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Procent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Procent)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Назад", "Index")
+        </div>
+    }
+</div>
