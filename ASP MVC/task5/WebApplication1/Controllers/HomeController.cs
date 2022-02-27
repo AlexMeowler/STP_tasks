@@ -36,7 +36,6 @@ namespace WebApplication1.Controllers
             GiveCredits();
             List<Bid> allBids = db.Bids.ToList();
             ViewBag.Bids = allBids;
-
             return View();
         }
 

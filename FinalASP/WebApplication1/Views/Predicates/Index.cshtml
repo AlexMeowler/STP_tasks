@@ -1,0 +1,24 @@
+﻿@model IEnumerable<WebApplication1.Models.Predicate>
+@using WebApplication1.Models
+@{
+    ViewBag.Title = "Предикаты";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Список предикатов в теории</h2>
+
+<p>
+    @Html.ActionLink("Добавить новый", "Create")
+</p>
+
+<ol>
+    @foreach (var item in Model)
+    {
+    <li>
+        @item.OpA.GetNameToDisplay()@Html.DisplayFor(modelItem => item.OperandA) @item.Op.GetNameToDisplay() @item.OpB.GetNameToDisplay()@Html.DisplayFor(modelItem => item.OperandB) |
+        @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+    </li>
+    } 
+    </ol>
+

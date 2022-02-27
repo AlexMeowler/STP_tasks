@@ -1,0 +1,30 @@
+﻿@model WebApplication1.Models.Predicate
+@using WebApplication1.Models
+@{
+    ViewBag.Title = "Удаление";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы уверены, что хотите удалить данное выражение?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Выражение
+        </dt>
+        <dd>
+            @Model.OpA.GetNameToDisplay()@Html.DisplayFor(model => model.OperandA) @Model.Op.GetNameToDisplay() @Model.OpB.GetNameToDisplay()@Html.DisplayFor(model => model.OperandB)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Назад", "Index")
+        </div>
+    }
+</div>

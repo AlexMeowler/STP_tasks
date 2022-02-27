@@ -1,0 +1,29 @@
+﻿@model IEnumerable<WebApplication1.Models.Predicate>
+@using WebApplication1.Models
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="alert alert-info">
+    <h5>Проверка теории на отсутствие противоречий</h5>
+</div>
+
+<div class="well">
+    
+    <ol>
+        @foreach (var item in Model)
+        {
+            <li>
+                @item.OpA.GetNameToDisplay()@Html.DisplayFor(modelItem => item.OperandA) @item.Op.GetNameToDisplay() @item.OpB.GetNameToDisplay()@Html.DisplayFor(modelItem => item.OperandB)
+            </li>
+        }
+    </ol>
+    @using (Ajax.BeginForm("CheckTheory", new AjaxOptions
+    {
+        UpdateTargetId = "results"
+    }))
+    {
+        <input type="submit" value="Проверить" />
+    }
+    <div class="well-sm" id="results"> </div>
+</div>
