@@ -51,6 +51,31 @@ namespace WebApplication1.Models
             return correctSets != 0;
         }
 
+        public static List<Predicate> FindNotConflictingPredicates(List<Predicate> predicates)
+        {
+            if(CheckTheory(predicates))
+            {
+                return predicates;
+            }
+            List<Predicate> resolvedPredicates = new List<Predicate>();
+            for(int i = 0; i < predicates.Count; i++)
+            {
+                List<Predicate> predicatesCopy = new List<Predicate>(predicates);
+                predicatesCopy.RemoveAt(i);
+                List<Predicate> result = FindNotConflictingPredicates(predicatesCopy);
+                if(result.Count > resolvedPredicates.Count)
+                {
+                    resolvedPredicates = result;
+                }
+            }
+            return resolvedPredicates;
+        }
+
+        public override string ToString()
+        {
+            return $"{OpA.GetNameToDisplay()}{OperandA} {Op.GetNameToDisplay()} {OpB.GetNameToDisplay()}{OperandB}";
+        }
+
         private static string IntToBinaryWithPadding(int x, int length)
         {
             string binary = Convert.ToString(x, 2);

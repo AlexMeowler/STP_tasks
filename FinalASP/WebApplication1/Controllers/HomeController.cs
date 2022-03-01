@@ -7,6 +7,7 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize(Roles = "user")]
     public class HomeController : Controller
     {
         private PredicateContext db = new PredicateContext();
@@ -15,10 +16,22 @@ namespace WebApplication1.Controllers
             return View(db.Predicates.ToList());
         }
 
-        public string CheckTheory()
+        public ActionResult CheckTheory()
         {
-            string status = Predicate.CheckTheory(db.Predicates.ToList()) ? "не имеет противоречий" : "имеет противоречия";
-            return $"Теория {status}";
+            bool isOkay = Predicate.CheckTheory(db.Predicates.ToList());
+            string status = isOkay ? "не имеет противоречий" : "имеет противоречия";
+            status = $"Теория {status}";
+            if (isOkay)
+            {
+                return Content(status);
+            }
+            else
+            {
+                ViewBag.Status = status;
+                List<Predicate> predicates = db.Predicates.ToList();
+                predicates = predicates.Except(Predicate.FindNotConflictingPredicates(predicates)).ToList();
+                return PartialView(predicates);
+            }
         }
     }
 }

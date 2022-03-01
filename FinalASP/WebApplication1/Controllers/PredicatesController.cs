@@ -10,6 +10,7 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class PredicatesController : Controller
     {
         private PredicateContext db = new PredicateContext();

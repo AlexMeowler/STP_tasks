@@ -22,7 +22,7 @@ namespace WebApplication1.Models
 
     public enum UnaryOperator
     {
-        [Display(Name = "¬ (ОТРИЦАНИЕ)")]
+        [Display(Name = "¬ (НЕ)")]
         NOT
     }
     public static class Extensions

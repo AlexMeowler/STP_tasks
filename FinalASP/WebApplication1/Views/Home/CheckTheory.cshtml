@@ -1,0 +1,13 @@
+﻿@model IEnumerable<WebApplication1.Models.Predicate>
+@using WebApplication1.Models
+<div id="results">
+    @ViewBag.Status<br />
+    <h4>Список предикатов, вызывающих противоречие</h4>
+    <ol>
+        @foreach (var item in Model)
+        {
+            <li>@item.OpA.GetNameToDisplay()@Html.DisplayFor(modelItem => item.OperandA) @item.Op.GetNameToDisplay() @item.OpB.GetNameToDisplay()@Html.DisplayFor(modelItem => item.OperandB)</li>
+        }
+    </ol>
+</div>
+
