@@ -35,6 +35,20 @@ namespace WebApplication1.Models
                 OperandB = "B",
                 Op = BinaryOperator.EQUALS
             });
+            context.Predicates.Add(new Predicate
+            {
+                OperandA = "A",
+                OperandB = "B",
+                Op = BinaryOperator.AND
+            });
+            context.Predicates.Add(new Predicate
+            {
+                OpA = UnaryOperator.NOT,
+                OperandA = "A",
+                OpB = UnaryOperator.NOT,
+                OperandB = "B",
+                Op = BinaryOperator.AND
+            });
             base.Seed(context);
         }
     }

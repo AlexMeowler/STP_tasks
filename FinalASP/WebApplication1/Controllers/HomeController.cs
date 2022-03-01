@@ -23,13 +23,12 @@ namespace WebApplication1.Controllers
             status = $"Теория {status}";
             if (isOkay)
             {
-                return Content(status);
+                return Content($"<h4>{status}</h4>");
             }
             else
             {
                 ViewBag.Status = status;
-                List<Predicate> predicates = db.Predicates.ToList();
-                predicates = predicates.Except(Predicate.FindNotConflictingPredicates(predicates)).ToList();
+                List<List<Predicate>> predicates = Predicate.FindConflictingPredicates(db.Predicates.ToList());
                 return PartialView(predicates);
             }
         }

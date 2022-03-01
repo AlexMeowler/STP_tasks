@@ -51,26 +51,35 @@ namespace WebApplication1.Models
             return correctSets != 0;
         }
 
-        public static List<Predicate> FindNotConflictingPredicates(List<Predicate> predicates)
+        public static List<List<Predicate>> FindNotConflictingPredicates(List<Predicate> predicates)
         {
             if(CheckTheory(predicates))
             {
-                return predicates;
+                return new List<List<Predicate>>() { predicates };
             }
-            List<Predicate> resolvedPredicates = new List<Predicate>();
+            List<List<Predicate>> resolvedPredicates = new List<List<Predicate>>();
             for(int i = 0; i < predicates.Count; i++)
             {
                 List<Predicate> predicatesCopy = new List<Predicate>(predicates);
                 predicatesCopy.RemoveAt(i);
-                List<Predicate> result = FindNotConflictingPredicates(predicatesCopy);
-                if(result.Count > resolvedPredicates.Count)
-                {
-                    resolvedPredicates = result;
-                }
+                List<List<Predicate>> result = FindNotConflictingPredicates(predicatesCopy);
+                resolvedPredicates.AddRange(result);
             }
             return resolvedPredicates;
         }
 
+        public static List<List<Predicate>> FindConflictingPredicates(List<Predicate> allPredicates)
+        {
+            List<List<Predicate>> predicates = Predicate.FindNotConflictingPredicates(allPredicates)
+                    .Distinct(new ListComparer()).ToList();
+            predicates = (from pList in predicates
+                          orderby pList.Count descending
+                          select pList).ToList();
+            predicates = (from pList in predicates
+                          where pList.Count == predicates.First().Count
+                          select allPredicates.Except(pList).ToList()).ToList();
+            return predicates;
+        }
         public override string ToString()
         {
             return $"{OpA.GetNameToDisplay()}{OperandA} {Op.GetNameToDisplay()} {OpB.GetNameToDisplay()}{OperandB}";
@@ -85,6 +94,55 @@ namespace WebApplication1.Models
                 stringBuilder.Append("0");
             }
             return stringBuilder.ToString() + binary;
+        }
+
+        private class ListComparer : IEqualityComparer<List<Predicate>>
+        {
+            public bool Equals(List<Predicate> x, List<Predicate> y)
+            {
+                if (x.Count != y.Count)
+                {
+                    return false;
+                }
+                Dictionary<int, int> mapX = new Dictionary<int, int>();
+                Dictionary<int, int> mapY = new Dictionary<int, int>();
+                foreach (Predicate p in x)
+                {
+                    try
+                    {
+                        mapX[p.Id]++;
+                    }
+                    catch (Exception)
+                    {
+                        mapX[p.Id] = 1;
+                    }
+                }
+                foreach (Predicate p in y)
+                {
+                    try
+                    {
+                        mapY[p.Id]++;
+                    }
+                    catch (Exception)
+                    {
+                        mapY[p.Id] = 1;
+                    }
+
+                }
+                bool flag = true;
+                foreach (KeyValuePair<int, int> entry in mapX)
+                {
+                    int num = -1;
+                    mapY.TryGetValue(entry.Key, out num);
+                    flag &= num == entry.Value;
+                }
+                return flag;
+            }
+
+            public int GetHashCode(List<Predicate> obj)
+            {
+                return 0;
+            }
         }
     }
 }

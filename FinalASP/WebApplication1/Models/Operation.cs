@@ -16,7 +16,7 @@ namespace WebApplication1.Models
         XOR,
         [Display(Name = "→ (ИМПЛИКАЦИЯ)")]
         IMPL,
-        [Display(Name = "⇔ (ЭКВИВАЛЕНТНОСТЬ)")]
+        [Display(Name = "⇔ (ЭКВИВАЛЕНТНО)")]
         EQUALS
     }
 
