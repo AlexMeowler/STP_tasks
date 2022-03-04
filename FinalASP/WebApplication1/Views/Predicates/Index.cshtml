@@ -11,14 +11,16 @@
     @Html.ActionLink("Добавить новый", "Create")
 </p>
 
-<ol>
-    @foreach (var item in Model)
+<table class="table table-bordered">
+    @for(int i = 0; i < Model.Count(); i++)
     {
-    <li>
-        @item.OpA.GetNameToDisplay()@Html.DisplayFor(modelItem => item.OperandA) @item.Op.GetNameToDisplay() @item.OpB.GetNameToDisplay()@Html.DisplayFor(modelItem => item.OperandB) |
-        @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
-    </li>
+        var item = Model.ElementAt(i);
+        <tr>
+            <td>@(i + 1).</td>
+            <td>@item.OpA.GetNameToDisplay()@Html.DisplayFor(modelItem => item.OperandA) @item.Op.GetNameToDisplay() @item.OpB.GetNameToDisplay()@Html.DisplayFor(modelItem => item.OperandB)</td>
+            <td>@Html.ActionLink("Редактировать", "Edit", new { id = item.Id })</td>
+            <td>@Html.ActionLink("Удалить", "Delete", new { id = item.Id })</td>
+        </tr>
     } 
-    </ol>
+</table>
 

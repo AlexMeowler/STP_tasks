@@ -47,7 +47,7 @@ namespace WebApplication1.Models
                 OperandA = "A",
                 OpB = UnaryOperator.NOT,
                 OperandB = "B",
-                Op = BinaryOperator.AND
+                Op = BinaryOperator.XOR
             });
             base.Seed(context);
         }

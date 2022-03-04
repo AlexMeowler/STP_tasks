@@ -2,19 +2,28 @@
 @using WebApplication1.Models
 <div id="results">
     <h4>@ViewBag.Status</h4><br />
-    <h4>Список предикатов, вызывающих противоречие</h4>
-    <ol>
+    <h4>Список предикатов, вызывающих противоречие (по столбцам)</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="row">#</th>
+                @{ 
+                    var span = Model.Count<IEnumerable<WebApplication1.Models.Predicate>>();
+                }
+                <th scope="row" style="text-align: center" colspan="@span">Уравнения</th>
+            </tr>
+        </thead>
         @for (int j = 0; j < Model.First<IEnumerable<WebApplication1.Models.Predicate>>().Count<Predicate>(); j++)
         {
-        <li>
+        <tr>
+            <td>@(j + 1)</td>
             @for (int i = 0; i < Model.Count<IEnumerable<WebApplication1.Models.Predicate>>(); i++)
             {
                 var item = Model.ElementAt(i).ElementAt(j);
-                var delim = i < Model.Count<IEnumerable<WebApplication1.Models.Predicate>>() - 1 ? " | " : "";
-                @item.OpA.GetNameToDisplay()@Html.DisplayFor(modelItem => item.OperandA) @item.Op.GetNameToDisplay() @item.OpB.GetNameToDisplay()@Html.DisplayFor(modelItem => item.OperandB)@delim
+                <td>@item.OpA.GetNameToDisplay()@Html.DisplayFor(modelItem => item.OperandA) @item.Op.GetNameToDisplay() @item.OpB.GetNameToDisplay()@Html.DisplayFor(modelItem => item.OperandB)</td>
             }
-        </li>
+        </tr>
         }
-    </ol>
+    </table>
 </div>
 

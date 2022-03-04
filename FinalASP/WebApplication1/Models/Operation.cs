@@ -100,11 +100,9 @@ namespace WebApplication1.Models
     {
         private readonly bool x;
         private readonly bool y;
-        private readonly Operation X;
-        private readonly Operation Y;
-        private UnaryOperator? xU;
-        private UnaryOperator? yU;
-        private BinaryOperator? op;
+        private readonly UnaryOperator? xU;
+        private readonly UnaryOperator? yU;
+        private readonly BinaryOperator? op;
 
         public Operation(UnaryOperator? xU, bool x, UnaryOperator? yU, bool y, BinaryOperator op)
         {

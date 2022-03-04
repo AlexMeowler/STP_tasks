@@ -41,6 +41,10 @@ namespace WebApplication1.Models
                     bool x = binary[vars.IndexOf(p.OperandA)] == '1';
                     bool y = binary[vars.IndexOf(p.OperandB)] == '1';
                     f &= new Operation(p.OpA, x, p.OpB, y, p.Op.Value).Execute();
+                    if(!f)
+                    {
+                        break;
+                    }
                 }
                 if(f)
                 {
